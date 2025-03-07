@@ -8,10 +8,12 @@ class IntroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 138, 60, 55),
+      backgroundColor: Color.fromARGB(255, 138, 60, 55),
       body: Padding(
         padding: const EdgeInsets.all(25.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             const SizedBox(height: 25),
             
@@ -53,7 +55,13 @@ class IntroPage extends StatelessWidget {
           const SizedBox(height: 25),
         
           //get started button
-          MyButton(text: "Get Started")
+          MyButton(text: "Get Started",
+          onTap: () {
+            //go to menu page
+            Navigator.pushNamed(context, '/menupage');
+          },
+          
+          )
         ],),
      ),
     );
